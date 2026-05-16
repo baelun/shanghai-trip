@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海五日行程 6/24–6/28</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1208;
+  --ink-muted: #5a4e3a;
+  --ink-light: #9a8f7a;
+  --cream: #f7f3ec;
+  --cream-dark: #ede8de;
+  --gold: #c8962a;
+  --gold-light: #e8c96a;
+  --red: #c0392b;
+  --teal: #1a7a6e;
+  --paper: #faf7f2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, #2a1f0a 0%, transparent 70%),
+    linear-gradient(180deg, #0e0b06 0%, #1a1208 50%, #251c0e 100%);
+}
+
+.hero-ornament {
+  position: absolute;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(200,150,42,0.12);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 6s ease-in-out infinite;
+}
+.hero-ornament:nth-child(2) { width: 800px; height: 800px; animation-delay: 1s; border-color: rgba(200,150,42,0.07); }
+.hero-ornament:nth-child(3) { width: 400px; height: 400px; animation-delay: 2s; border-color: rgba(200,150,42,0.08); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(200,150,42,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,150,42,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content { position: relative; z-index: 2; padding: 2rem; }
+
+.hero-eyebrow {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', 'Noto Serif TC', serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+
+.hero-title span {
+  display: block;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(4rem, 14vw, 10rem);
+}
+
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: rgba(255,255,255,0.45);
+  margin-top: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.6s forwards;
+}
+
+.hero-dates {
+  display: flex; gap: 2rem; justify-content: center;
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.8s forwards;
+}
+.hero-date-item {
+  text-align: center;
+}
+.hero-date-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.hero-date-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+}
+.hero-sep {
+  align-self: center;
+  color: rgba(200,150,42,0.3);
+  font-size: 1.5rem;
+}
+
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.2s forwards;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(200,150,42,0.5), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── NAV TABS ─── */
+.nav-sticky {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247,243,236,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,150,42,0.2);
+}
+
+.nav-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink-light);
+  border: none; background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-tab:hover { color: var(--ink); }
+.nav-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ─── MAIN CONTENT ─── */
+.main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+/* ─── DAY PANELS ─── */
+.day-panel { display: none; }
+.day-panel.active { display: block; }
+
+.day-header {
+  padding: 4rem 0 2rem;
+  border-bottom: 1px solid var(--cream-dark);
+  margin-bottom: 2rem;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+
+.day-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--cream-dark);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.day-info { flex: 1; min-width: 200px; }
+
+.day-date {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.day-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.day-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border: 1px solid var(--cream-dark);
+  border-radius: 2px;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+
+/* ─── TIMELINE ─── */
+.timeline { position: relative; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), rgba(200,150,42,0.1));
+}
+
+.event { position: relative; display: flex; gap: 2rem; margin-bottom: 1.5rem; padding-left: 2.5rem; }
+
+.event-dot {
+  position: absolute;
+  left: 10px; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.dot-gold { background: var(--gold); }
+.dot-teal { background: var(--teal); }
+.dot-red { background: var(--red); }
+.dot-ink { background: var(--ink-muted); }
+
+.event-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--cream-dark);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+.event-card.type-transport::before { background: var(--ink-light); }
+.event-card.type-food::before { background: var(--gold); }
+.event-card.type-sight::before { background: var(--teal); }
+.event-card.type-cruise::before { background: var(--red); }
+.event-card.type-fun::before { background: #7a5ca0; }
+.event-card.type-hotel::before { background: var(--ink-muted); }
+
+.event-card:hover {
+  border-color: rgba(200,150,42,0.3);
+  box-shadow: 0 4px 20px rgba(200,150,42,0.08);
+}
+
+.event-meta {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 0.4rem;
+}
+
+.event-icon { font-size: 1.1rem; }
+
+.event-type-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.label-food { background: #fdf3dc; color: #8a6010; }
+.label-sight { background: #dcf0ea; color: #1a6050; }
+.label-cruise { background: #fde8e6; color: #a02820; }
+.label-transport { background: #f0f0f0; color: #555; }
+.label-fun { background: #ede8f5; color: #5a3c90; }
+.label-hotel { background: #ede8de; color: #5a4e3a; }
+.label-shop { background: #f0f0e0; color: #5a5820; }
+
+.event-time {
+  font-size: 0.7rem;
+  color: var(--ink-light);
+  margin-left: auto;
+  font-weight: 300;
+}
+
+.event-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.event-desc {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+
+.badges {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem;
+}
+.badge {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 2px;
+  font-weight: 400;
+  border: 1px solid;
+}
+.badge-price { background: #fff8ea; color: #7a5c10; border-color: #e8c96a; }
+.badge-tip { background: #edf5ff; color: #1a4070; border-color: #8ab8e0; }
+.badge-info { background: #f0f0f0; color: #555; border-color: #ddd; }
+
+/* ─── CHOICE BOX ─── */
+.choice-box {
+  background: var(--ink);
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+}
+.choice-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.choice-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.choice-item:last-child { border-bottom: none; }
+.choice-tag {
+  font-size: 0.65rem;
+  background: rgba(200,150,42,0.15);
+  color: var(--gold-light);
+  border: 1px solid rgba(200,150,42,0.3);
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.choice-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+/* ─── BUDGET SECTION ─── */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.budget-card {
+  background: #fff;
+  border: 1px solid var(--cream-dark);
+  border-radius: 6px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.budget-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.5rem;
+}
+.budget-amount {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.budget-note {
+  font-size: 0.7rem;
+  color: var(--ink-light);
+  margin-top: 4px;
+}
+
+/* ─── SECTION DIVIDERS ─── */
+.section-rule {
+  max-width: 900px; margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--cream-dark);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  text-align: center;
+  padding: 3rem 2rem;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+footer strong { color: var(--gold); }
+
+/* ─── MOBILE ─── */
+@media (max-width: 600px) {
+  .day-header { flex-direction: column; align-items: flex-start; }
+  .day-number { font-size: 4rem; }
+  .event { padding-left: 2rem; gap: 1rem; }
+  .event-card { padding: 1rem; }
+  .timeline::before { left: 10px; }
+  .event-dot { left: 5px; }
+  .nav-tab { padding: 0.9rem 1rem; font-size: 0.72rem; }
+  .hero-dates { gap: 1rem; }
+  .hero-sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ 魔都五日深度旅行</p>
+    <h1 class="hero-title">
+      <span>上海</span>
+      Shanghai
+    </h1>
+    <p class="hero-subtitle">迪士尼 · 外灘 · 豫園 · 黃浦江夜遊 · 法租界</p>
+    <div class="hero-dates">
+      <div class="hero-date-item">
+        <div class="hero-date-num">6/24</div>
+        <div class="hero-date-label">抵達</div>
+      </div>
+      <div class="hero-sep">—</div>
+      <div class="hero-date-item">
+        <div class="hero-date-num">5天</div>
+        <div class="hero-date-label">4夜</div>
+      </div>
+      <div class="hero-sep">—</div>
+      <div class="hero-date-item">
+        <div class="hero-date-num">6/28</div>
+        <div class="hero-date-label">離境</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav-sticky">
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="showDay(0)">6/24 抵達</button>
+    <button class="nav-tab" onclick="showDay(1)">6/25 迪士尼</button>
+    <button class="nav-tab" onclick="showDay(2)">6/26 外灘＋浦江</button>
+    <button class="nav-tab" onclick="showDay(3)">6/27 文藝漫步</button>
+    <button class="nav-tab" onclick="showDay(4)">6/28 離境</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ══ DAY 1 ══ -->
+<div class="day-panel active" id="day0">
+  <div class="day-header">
+    <div class="day-number">01</div>
+    <div class="day-info">
+      <div class="day-date">Tuesday · June 24, 2025</div>
+      <h2 class="day-title">抵達上海<br>輕鬆落地夜</h2>
+      <span class="day-tag">落地 → 南京路 → 外灘夜景</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="event">
+      <div class="event-dot dot-ink"></div>
+      <div class="event-card type-transport">
+        <div class="event-meta">
+          <span class="event-icon">✈️</span>
+          <span class="event-type-label label-transport">交通</span>
+          <span class="event-time">16:30 落地</span>
+        </div>
+        <h3 class="event-title">抵達浦東國際機場（PVG）</h3>
+        <p class="event-desc">通關＋取行李預計60–90分鐘。建議兩條路線入市：<br>① 磁浮到龍陽路（8分鐘）→ 轉地鐵2號線，快但貴<br>② 全程地鐵2號線（約50分鐘），最省錢</p>
+        <div class="badges">
+          <span class="badge badge-price">磁浮 ¥50 + 地鐵 ¥4</span>
+          <span class="badge badge-price">全程地鐵 ¥7</span>
+          <span class="badge badge-tip">💡 先換人民幣或開通支付寶國際版</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-ink"></div>
+      <div class="event-card type-hotel">
+        <div class="event-meta">
+          <span class="event-icon">🏨</span>
+          <span class="event-type-label label-hotel">住宿</span>
+          <span class="event-time">約 18:00</span>
+        </div>
+        <h3 class="event-title">入住飯店</h3>
+        <p class="event-desc">推薦住南京東路／人民廣場一帶，步行即到外灘，地鐵11號線也可直達迪士尼，整趟行程交通最順暢。</p>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🥟</span>
+          <span class="event-type-label label-food">晚餐</span>
+          <span class="event-time">18:30–20:00</span>
+        </div>
+        <h3 class="event-title">小楊生煎＋沈大成糕團</h3>
+        <p class="event-desc">南京路步行街邊走邊吃。小楊生煎是大眾點評高評分名店，皮薄湯多，比城隍廟觀光客版更受本地人認可。沈大成糕團的條頭糕、青團也是老字號必嚐。</p>
+        <div class="badges">
+          <span class="badge badge-price">小楊生煎 ¥20–30／人</span>
+          <span class="badge badge-price">沈大成 ¥10–20</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🌆</span>
+          <span class="event-type-label label-sight">景點</span>
+          <span class="event-time">20:00–22:00</span>
+        </div>
+        <h3 class="event-title">外灘夜景初探</h3>
+        <p class="event-desc">步行至外灘，感受第一個上海夜晚。18:30後燈光全亮，對岸陸家嘴三件套倒映黃浦江，壯觀震撼。輕鬆散步無需行程壓力，明後天還有更多。</p>
+        <div class="badges">
+          <span class="badge badge-price">免費</span>
+          <span class="badge badge-tip">💡 記得提前霸位，人潮多</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DAY 2 ══ -->
+<div class="day-panel" id="day1">
+  <div class="day-header">
+    <div class="day-number">02</div>
+    <div class="day-info">
+      <div class="day-date">Wednesday · June 25, 2025</div>
+      <h2 class="day-title">上海迪士尼<br>樂園全日遊</h2>
+      <span class="day-tag">08:30–21:30 · 全球最大城堡</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="event">
+      <div class="event-dot dot-ink"></div>
+      <div class="event-card type-transport">
+        <div class="event-meta">
+          <span class="event-icon">🚇</span>
+          <span class="event-type-label label-transport">交通</span>
+          <span class="event-time">06:30 出門</span>
+        </div>
+        <h3 class="event-title">前往迪士尼</h3>
+        <p class="event-desc">地鐵11號線至迪士尼站1號出口（約40–50分），首班7:00抵達。搶早享卡者建議提前叫滴滴，比地鐵快且能到更靠近入口的計程車下客點。</p>
+        <div class="badges">
+          <span class="badge badge-price">地鐵 ¥7</span>
+          <span class="badge badge-price">滴滴約 ¥80–120（視距離）</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">☕</span>
+          <span class="event-type-label label-food">早餐</span>
+          <span class="event-time">07:30</span>
+        </div>
+        <h3 class="event-title">入園前輕食</h3>
+        <p class="event-desc">園區外簡單吃點東西（便利商店或附近小店），入園後人多、餐廳排隊費時，先墊胃可以多玩幾個設施再找餐廳。</p>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-fun">
+        <div class="event-meta">
+          <span class="event-icon">🎡</span>
+          <span class="event-type-label label-fun">主題樂園</span>
+          <span class="event-time">08:30–21:00</span>
+        </div>
+        <h3 class="event-title">上海迪士尼樂園</h3>
+        <p class="event-desc"><strong style="color:#1a1208">必玩清單（依優先順序）：</strong><br>
+        1. TRON 創極速光輪 — 一入園立刻衝，排隊最長（旺季90分鐘起）<br>
+        2. 翱翔·飛越地平線 — 全球最熱門設施之一<br>
+        3. 瘋狂動物城：熱力追蹤 — 全球首個Zootopia園區<br>
+        4. 加勒比海盜 — 細節驚人，場景超沉浸<br>
+        5. 七矮人礦山車 — 家庭友好，景色精緻<br>
+        6. 20:30 煙火表演 — 壓軸不容錯過</p>
+        <div class="badges">
+          <span class="badge badge-price">門票 ¥475–599（6月平日）</span>
+          <span class="badge badge-tip">早享卡 +¥100，提早1小時入園</span>
+          <span class="badge badge-tip">💡 KKday / Klook 提前購票更划算</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🍽️</span>
+          <span class="event-type-label label-food">園內餐飲</span>
+          <span class="event-time">全天</span>
+        </div>
+        <h3 class="event-title">迪士尼小鎮港式茶餐廳</h3>
+        <p class="event-desc">評價最佳且CP值高的園內選擇，牛叉飯份量大，來一碗加叉燒餐包奶茶剛剛好。若要省錢，可帶密封食品與非酒精飲料入園（官方允許）。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥50–100</span>
+          <span class="badge badge-tip">KLOOK 餐飲券抵用划算</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="choice-box">
+    <p class="choice-title">✦ 方案選擇</p>
+    <div class="choice-item">
+      <span class="choice-tag">省錢版</span>
+      <span class="choice-text">標準門票 ¥475 + 地鐵，07:30到排早班隊伍，靠腿自行拚</span>
+    </div>
+    <div class="choice-item">
+      <span class="choice-tag">舒適版</span>
+      <span class="choice-text">門票 + 早享卡 ¥100，提早1小時入園輕鬆刷熱門設施</span>
+    </div>
+    <div class="choice-item">
+      <span class="choice-tag">豪華版</span>
+      <span class="choice-text">住迪士尼官方酒店，免費享早享福利 + VIP通道，少排隊30分鐘</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DAY 3 ══ -->
+<div class="day-panel" id="day2">
+  <div class="day-header">
+    <div class="day-number">03</div>
+    <div class="day-info">
+      <div class="day-date">Thursday · June 26, 2025</div>
+      <h2 class="day-title">外灘·豫園·<br>黃浦江夜遊</h2>
+      <span class="day-tag">最精華的上海一天</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🥟</span>
+          <span class="event-type-label label-food">早餐</span>
+          <span class="event-time">09:00–10:00</span>
+        </div>
+        <h3 class="event-title">南翔饅頭店（豫園店）</h3>
+        <p class="event-desc">百年老字號，非遺級美味。皮薄如紙、湯汁充盈的小籠包。避開12點午餐高峰，早上排隊僅15–30分鐘。豆沙包、蟹粉灌湯包都值得點。</p>
+        <div class="badges">
+          <span class="badge badge-price">鮮肉小籠6個 ¥25</span>
+          <span class="badge badge-price">蟹粉灌湯包 ¥35</span>
+          <span class="badge badge-tip">💡 週一豫園閉園，本日週四正常</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🏯</span>
+          <span class="event-type-label label-sight">景點</span>
+          <span class="event-time">10:00–12:00</span>
+        </div>
+        <h3 class="event-title">豫園 + 城隍廟商圈</h3>
+        <p class="event-desc">明代江南古典園林，九曲橋、湖心亭、大假山必逛。城隍廟商圈可邊走邊嚐：梨膏露（中藥草本老字號）、蟹殼黃、桂花糕。老建築白天江南風情、夜晚金碧輝煌，各有不同美感。</p>
+        <div class="badges">
+          <span class="badge badge-price">豫園票 ¥30（淡）/ ¥40（旺）</span>
+          <span class="badge badge-price">城隍廟免費</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🍽️</span>
+          <span class="event-type-label label-food">午餐</span>
+          <span class="event-time">12:00–13:30</span>
+        </div>
+        <h3 class="event-title">綠波廊（本幫菜）</h3>
+        <p class="event-desc">豫園出口旁，連續8屆必比登推薦，2023年列入上海市非物質文化遺產。招牌：紅燒鮰魚年糕、蝴蝶酥、雞汁腐皮卷。打卡還有桂花拉糕贈送。評價穩定、選材講究。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥150–200</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🏛️</span>
+          <span class="event-type-label label-sight">景點</span>
+          <span class="event-time">14:00–17:30</span>
+        </div>
+        <h3 class="event-title">外灘漫步・萬國建築群</h3>
+        <p class="event-desc">沿中山東一路步行，52棟歐式萬國建築——哥德式、巴洛克、文藝復興風格錯落有致。每棟建築都有百年歷史故事。傍晚等待燈光亮起，對岸陸家嘴天際線逐漸點亮，是上海最標誌性的畫面。</p>
+        <div class="badges">
+          <span class="badge badge-price">免費</span>
+          <span class="badge badge-tip">💡 18:30後燈光全亮，人潮也最多</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🍖</span>
+          <span class="event-type-label label-food">晚餐</span>
+          <span class="event-time">17:30–18:30</span>
+        </div>
+        <h3 class="event-title">鮮得來・排骨年糕</h3>
+        <p class="event-desc">上海老字號，排骨外酥內嫩、裹上特製醬汁，年糕軟糯彈牙。城隍廟商圈附近有分店，高評價且價格親民，是正餐和小吃中間最剛好的一頓。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥30–50</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-red"></div>
+      <div class="event-card type-cruise">
+        <div class="event-meta">
+          <span class="event-icon">🚢</span>
+          <span class="event-type-label label-cruise">夜遊</span>
+          <span class="event-time">19:30–21:00</span>
+        </div>
+        <h3 class="event-title">黃浦江夜遊（十六鋪碼頭）</h3>
+        <p class="event-desc">搭夜遊遊船飽覽兩岸風光，全程約1小時。路線：十六鋪→老碼頭→南浦大橋→環球金融中心→金茂大廈→上海中心→東方明珠→北外灘→外白渡橋→萬國建築群→返回。夜航取票時間17:00–20:30，請先取票再吃晚餐。</p>
+        <div class="badges">
+          <span class="badge badge-price">觀光船票 ¥100–160</span>
+          <span class="badge badge-tip">💡 美團/大眾點評買更便宜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="choice-box">
+    <p class="choice-title">✦ 黃浦江夜遊方案選擇</p>
+    <div class="choice-item">
+      <span class="choice-tag">省錢版</span>
+      <span class="choice-text">¥2 輪渡（金陵東路→東昌路），5分鐘渡江，免費站在甲板欣賞兩岸夜景</span>
+    </div>
+    <div class="choice-item">
+      <span class="choice-tag">標準版</span>
+      <span class="choice-text">十六鋪碼頭觀光遊船 ¥100–160，1小時精華遊，含語音導覽</span>
+    </div>
+    <div class="choice-item">
+      <span class="choice-tag">豪華版</span>
+      <span class="choice-text">申城之光晚餐遊船（含海鮮自助餐），人均 ¥250–350，邊吃邊賞景</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DAY 4 ══ -->
+<div class="day-panel" id="day3">
+  <div class="day-header">
+    <div class="day-number">04</div>
+    <div class="day-info">
+      <div class="day-date">Friday · June 27, 2025</div>
+      <h2 class="day-title">法租界漫步<br>陸家嘴登高</h2>
+      <span class="day-tag">武康路 · 田子坊 · 浦東天際線</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🥐</span>
+          <span class="event-type-label label-food">早餐</span>
+          <span class="event-time">08:30–09:30</span>
+        </div>
+        <h3 class="event-title">上海早餐四大金剛</h3>
+        <p class="event-desc">在住宿附近找弄堂早餐鋪，點一份大餅、油條、粢飯、豆漿組合，是上海人每日必備的早晨儀式感，物美價廉，也是融入在地生活的最好方式。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥10–15</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🌳</span>
+          <span class="event-type-label label-sight">景點</span>
+          <span class="event-time">10:00–12:00</span>
+        </div>
+        <h3 class="event-title">武康路 + 安福路漫步</h3>
+        <p class="event-desc">前法租界最美街道，梧桐樹成蔭。武康大樓（1924年郵輪造型建築，邬達克設計）是必拍打卡地標。沿路有巴金故居、特色咖啡館、選物店，整條街1.1公里精華盡收。</p>
+        <div class="badges">
+          <span class="badge badge-price">免費</span>
+          <span class="badge badge-tip">💡 上午人少，光線好，最適合拍照</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🍜</span>
+          <span class="event-type-label label-food">午餐</span>
+          <span class="event-time">12:00–13:30</span>
+        </div>
+        <h3 class="event-title">雲和麵館（必比登推薦）</h3>
+        <p class="event-desc">獲必比登推薦、大眾點評必吃榜，招牌蟹粉麵鮮美濃郁，用餐時間人滿為患，建議提前訂位。田子坊周邊也有多間評分高的本幫菜可選。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥60–90</span>
+          <span class="badge badge-tip">💡 必須提前訂位</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🏙️</span>
+          <span class="event-type-label label-sight">景點</span>
+          <span class="event-time">14:00–17:00</span>
+        </div>
+        <h3 class="event-title">陸家嘴三件套・觀景登高</h3>
+        <p class="event-desc">浦東三件套近看震撼——上海中心（632m）、環球金融中心（492m）、金茂大廈（420m）。推薦登上海中心「上海之巔」觀光廳，360度俯瞰全城。或只沿濱江大道步行，免費欣賞對岸外灘最佳角度。</p>
+        <div class="badges">
+          <span class="badge badge-price">東方明珠二球聯票 ¥199</span>
+          <span class="badge badge-price">上海之巔觀光廳 ¥180起</span>
+          <span class="badge badge-price">濱江大道步行 免費</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🦐</span>
+          <span class="event-type-label label-food">晚餐</span>
+          <span class="event-time">18:00–19:30</span>
+        </div>
+        <h3 class="event-title">新天地周邊本幫菜</h3>
+        <p class="event-desc">新天地石庫門建築保留老上海韻味，周邊餐廳選擇豐富。推薦點油爆蝦、紅燒肉、蔥油雞等本幫菜名菜，氣氛好、評價穩定。晚上7點後燈光有氛圍，適合最後一個完整夜晚。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥100–150</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🍺</span>
+          <span class="event-type-label label-sight">夜晚</span>
+          <span class="event-time">20:00 之後</span>
+        </div>
+        <h3 class="event-title">新天地酒吧街 / 安福路咖啡</h3>
+        <p class="event-desc">新天地夜晚熱鬧，酒吧餐廳密集，石庫門紅磚牆配燈光極具氛圍。或回武康路夜間漫步，感受另一種靜謐文藝的上海。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DAY 5 ══ -->
+<div class="day-panel" id="day4">
+  <div class="day-header">
+    <div class="day-number">05</div>
+    <div class="day-info">
+      <div class="day-date">Saturday · June 28, 2025</div>
+      <h2 class="day-title">道別上海<br>帶走記憶</h2>
+      <span class="day-tag">班機 19:50 起飛 → 21:50 抵桃園</span>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🥟</span>
+          <span class="event-type-label label-food">早餐</span>
+          <span class="event-time">09:00–10:00</span>
+        </div>
+        <h3 class="event-title">大壺春・生煎包</h3>
+        <p class="event-desc">上海人氣生煎老字號，底部香脆、湯汁鮮甜，鮮肉大壺春比城隍廟觀光客版更受好評。最後一頓早餐，用生煎和這座城市道別。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥25–40</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-teal"></div>
+      <div class="event-card type-sight">
+        <div class="event-meta">
+          <span class="event-icon">🛍️</span>
+          <span class="event-type-label label-sight">採買</span>
+          <span class="event-time">10:00–13:00</span>
+        </div>
+        <h3 class="event-title">最後伴手禮採買</h3>
+        <p class="event-desc">城隍廟商圈：蝴蝶酥、梨膏糖、雪花膏（護手霜）——這三樣是上海最具代表性的手信。或逛南京路超市補零食。提醒：蝴蝶酥保存期限短，注意出境規定。</p>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-gold"></div>
+      <div class="event-card type-food">
+        <div class="event-meta">
+          <span class="event-icon">🍗</span>
+          <span class="event-type-label label-food">午餐</span>
+          <span class="event-time">13:00–14:30</span>
+        </div>
+        <h3 class="event-title">雲南南路美食街</h3>
+        <p class="event-desc">老牌上海人美食記憶：小紹興白斬雞（皮脆肉嫩，特調醬汁）、五芳齋粽子（蛋黃肉粽鹹香軟糯）。煙火氣十足，價格實惠，是道地上海味的最後一課。</p>
+        <div class="badges">
+          <span class="badge badge-price">人均 ¥30–60</span>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-dot dot-ink"></div>
+      <div class="event-card type-transport">
+        <div class="event-meta">
+          <span class="event-icon">✈️</span>
+          <span class="event-type-label label-transport">交通</span>
+          <span class="event-time">15:00 出發（最遲）</span>
+        </div>
+        <h3 class="event-title">前往浦東機場</h3>
+        <p class="event-desc">地鐵2號線約50分鐘（¥7）或磁浮+地鐵。班機19:50，建議至少17:00前抵達機場，預留2.5–3小時辦理手續。六月週末出境人多，勿低估排隊時間。</p>
+        <div class="badges">
+          <span class="badge badge-price">地鐵 ¥7</span>
+          <span class="badge badge-tip">💡 17:00前到機場為宜</span>
+          <span class="badge badge-info">19:50 → 21:50 抵桃園</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Budget -->
+  <h3 style="font-family:'Noto Serif TC',serif; font-weight:300; font-size:1.3rem; margin-top:3rem; margin-bottom:1rem; color:var(--ink);">💰 預算參考（不含住宿）</h3>
+  <div class="budget-grid">
+    <div class="budget-card">
+      <div class="budget-label">省錢版 / 人</div>
+      <div class="budget-amount">¥700</div>
+      <div class="budget-note">–¥900</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-label">舒適版 / 人</div>
+      <div class="budget-amount">¥1,200</div>
+      <div class="budget-note">–¥1,500</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-label">豪華版 / 人</div>
+      <div class="budget-amount">¥2,000</div>
+      <div class="budget-note">–¥2,500+</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-label">迪士尼門票</div>
+      <div class="budget-amount">¥475</div>
+      <div class="budget-note">平日常規日起</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>上海 · 2025年6月 ✦ <strong>Shanghai 五日深度行程</strong></p>
+  <p style="margin-top:8px; font-size:0.65rem; letter-spacing:0.05em">資訊僅供參考，實際票價與營業時間請以官方公告為準</p>
+</footer>
+
+<script>
+function showDay(idx) {
+  document.querySelectorAll('.nav-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+  document.querySelectorAll('.day-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+  document.querySelector('.nav-sticky').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Intersection Observer for scroll-triggered fade-in
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.event-card').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = `opacity 0.5s ease ${i * 0.05}s, transform 0.5s ease ${i * 0.05}s`;
+  io.observe(el);
+});
+</script>
+
+</body>
+</html>
