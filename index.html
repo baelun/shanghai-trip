@@ -9,8 +9,6 @@
 :root{--ink:#1a1208;--ink-muted:#5a4e3a;--ink-light:#9a8f7a;--cream-dark:#ede8de;--gold:#c8962a;--gold-light:#e8c96a;--red:#c0392b;--teal:#1a7a6e;--paper:#faf7f2;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;}
-
-/* HERO */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;background:var(--ink);}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,#2a1f0a 0%,transparent 70%),linear-gradient(180deg,#0e0b06 0%,#1a1208 50%,#251c0e 100%);}
 .hero-ornament{position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 6s ease-in-out infinite;}
@@ -35,16 +33,12 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(200,150,42,.5),transparent);animation:scrollLine 2s ease-in-out infinite;}
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-
-/* NAV */
 .nav-sticky{position:sticky;top:0;z-index:100;background:rgba(247,243,236,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,150,42,.2);}
-.nav-inner{max-width:980px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
 .nav-inner::-webkit-scrollbar{display:none;}
 .nav-tab{flex-shrink:0;padding:1rem 1.4rem;font-size:.76rem;font-weight:500;letter-spacing:.05em;color:var(--ink-light);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;}
 .nav-tab:hover{color:var(--ink);}
 .nav-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-
-/* MAIN */
 .main{max-width:980px;margin:0 auto;padding:0 1.5rem 6rem;}
 .day-panel{display:none;}.day-panel.active{display:block;}
 .day-header{padding:3.5rem 0 1.5rem;border-bottom:1px solid var(--cream-dark);margin-bottom:2rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
@@ -53,8 +47,6 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .day-date{font-size:.7rem;letter-spacing:.2em;font-weight:500;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem;}
 .day-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:300;color:var(--ink);line-height:1.3;}
 .day-tag{display:inline-block;font-size:.65rem;letter-spacing:.1em;padding:4px 10px;border:1px solid var(--cream-dark);border-radius:2px;color:var(--ink-muted);margin-top:8px;}
-
-/* TIMELINE */
 .timeline{position:relative;}
 .timeline::before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(200,150,42,.1));}
 .event{position:relative;display:flex;gap:2rem;margin-bottom:1.4rem;padding-left:2.5rem;}
@@ -74,21 +66,27 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:.4rem;}
 .badge{font-size:.68rem;padding:3px 9px;border-radius:2px;font-weight:400;border:1px solid;}
 .badge-price{background:#fff8ea;color:#7a5c10;border-color:#e8c96a;}.badge-tip{background:#edf5ff;color:#1a4070;border-color:#8ab8e0;}.badge-info{background:#f0f0f0;color:#555;border-color:#ddd;}.badge-star{background:#fde8e6;color:#8a1010;border-color:#e8a0a0;}
-
-/* MAP — OpenStreetMap embed */
+/* MAP */
 .map-wrap{margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--cream-dark);}
 .map-bar{padding:.8rem 1.2rem;background:var(--ink);display:flex;align-items:center;gap:10px;}
 .map-bar-title{font-size:.72rem;font-weight:500;letter-spacing:.12em;color:var(--gold-light);text-transform:uppercase;flex:1;}
-.map-bar-link{font-size:.65rem;color:rgba(255,255,255,.4);text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:3px 10px;border-radius:20px;transition:all .2s;white-space:nowrap;}
-.map-bar-link:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+.map-bar-link{font-size:.65rem;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.2);padding:3px 10px;border-radius:20px;transition:all .2s;white-space:nowrap;}
+.map-bar-link:hover{color:#fff;border-color:rgba(255,255,255,.5);}
 .map-tabs{display:flex;background:#f5f0e8;border-bottom:1px solid var(--cream-dark);overflow-x:auto;scrollbar-width:none;}
 .map-tabs::-webkit-scrollbar{display:none;}
 .map-tab-btn{flex-shrink:0;padding:.55rem 1rem;font-size:.7rem;font-weight:500;color:var(--ink-light);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;}
 .map-tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(200,150,42,.05);}
 .map-frames iframe{width:100%;height:360px;border:none;display:none;}
 .map-frames iframe.active{display:block;}
-
-/* NEARBY PLACES */
+/* SCENE TIPS */
+.scene-box{background:linear-gradient(135deg,#0e1a12,#1a2a1a);border-radius:8px;padding:1.3rem 1.6rem;margin:1.5rem 0;}
+.scene-title{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#7ec896;font-weight:500;margin-bottom:.9rem;display:flex;align-items:center;gap:8px;}
+.scene-title::after{content:'';flex:1;height:1px;background:rgba(126,200,150,.15);}
+.scene-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;}
+.scene-item{background:rgba(255,255,255,.04);border:1px solid rgba(126,200,150,.12);border-radius:6px;padding:.9rem 1rem;}
+.scene-time{font-size:.6rem;letter-spacing:.1em;color:#7ec896;font-weight:500;margin-bottom:4px;text-transform:uppercase;}
+.scene-desc{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.6;}
+/* NEARBY */
 .nearby-section{margin:2rem 0;}
 .nearby-title{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
 .nearby-title::after{content:'';flex:1;height:1px;background:var(--cream-dark);}
@@ -102,8 +100,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .nc-desc{font-size:.72rem;color:var(--ink-light);line-height:1.55;}
 .nc-tag{display:inline-block;font-size:.62rem;margin-top:6px;padding:2px 8px;border-radius:2px;background:var(--cream-dark);color:var(--ink-muted);}
 .nc-free{background:#dcf0ea;color:#1a6050;}
-
-/* HOTEL CARD */
+/* HOTEL */
 .hotel-card{background:#fff;border:1px solid rgba(200,150,42,.25);border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:2rem;display:flex;gap:1.2rem;align-items:flex-start;}
 .hotel-icon{font-size:2rem;flex-shrink:0;}
 .hotel-body{flex:1;}
@@ -111,15 +108,13 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .hotel-meta{font-size:.75rem;color:var(--ink-light);margin-bottom:8px;}
 .hotel-perks{display:flex;flex-wrap:wrap;gap:6px;}
 .hotel-perk{font-size:.65rem;padding:3px 9px;background:rgba(200,150,42,.08);border:1px solid rgba(200,150,42,.2);border-radius:2px;color:var(--gold);}
-
-/* CHOICE BOX */
+/* CHOICE */
 .choice-box{background:var(--ink);border-radius:6px;padding:1.4rem 1.8rem;margin-top:1.8rem;}
 .choice-title{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;font-weight:500;}
 .choice-item{display:flex;gap:1rem;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
 .choice-item:last-child{border-bottom:none;}
 .choice-tag{font-size:.65rem;background:rgba(200,150,42,.15);color:var(--gold-light);border:1px solid rgba(200,150,42,.3);padding:3px 8px;border-radius:2px;white-space:nowrap;margin-top:2px;}
 .choice-text{font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.6;}
-
 /* BUDGET */
 .section-heading{font-family:'Noto Serif TC',serif;font-weight:300;font-size:1.2rem;margin-top:2.5rem;margin-bottom:1rem;color:var(--ink);display:flex;align-items:center;gap:10px;}
 .section-heading::after{content:'';flex:1;height:1px;background:var(--cream-dark);}
@@ -128,29 +123,22 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .budget-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.5rem;}
 .budget-amount{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--gold);line-height:1;}
 .budget-note{font-size:.7rem;color:var(--ink-light);margin-top:4px;}
-
 footer{background:var(--ink);text-align:center;padding:3rem 2rem;color:rgba(255,255,255,.25);font-size:.72rem;letter-spacing:.1em;}
 footer strong{color:var(--gold);}
-
 @media(max-width:600px){
-  .day-header{flex-direction:column;align-items:flex-start;}
-  .day-number{font-size:4rem;}
-  .event{padding-left:2rem;gap:1rem;}
-  .event-card{padding:1rem;}
-  .timeline::before{left:10px;}
-  .event-dot{left:5px;}
+  .day-number{font-size:4rem;}.day-header{flex-direction:column;align-items:flex-start;}
+  .event{padding-left:2rem;gap:1rem;}.event-card{padding:1rem;}
+  .timeline::before{left:10px;}.event-dot{left:5px;}
   .nav-tab{padding:.9rem 1rem;font-size:.7rem;}
-  .hero-sep{display:none;}
-  .hero-dates{gap:1rem;}
+  .hero-sep{display:none;}.hero-dates{gap:1rem;}
   .map-frames iframe{height:260px;}
-  .nearby-grid{grid-template-columns:1fr 1fr;}
+  .nearby-grid,.scene-grid{grid-template-columns:1fr 1fr;}
   .hotel-card{flex-direction:column;gap:.5rem;}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div><div class="hero-grid"></div>
   <div class="hero-ornament o1"></div><div class="hero-ornament o2"></div><div class="hero-ornament o3"></div>
@@ -170,7 +158,6 @@ footer strong{color:var(--gold);}
   <div class="scroll-hint"><div class="scroll-line"></div>SCROLL</div>
 </section>
 
-<!-- NAV -->
 <nav class="nav-sticky">
   <div class="nav-inner">
     <button class="nav-tab active" onclick="showDay(0)">6/24 抵達</button>
@@ -183,7 +170,7 @@ footer strong{color:var(--gold);}
 
 <main class="main">
 
-<!-- ════ DAY 1 ════ -->
+<!-- ══ DAY 1 ══ -->
 <div class="day-panel active" id="day0">
   <div class="day-header">
     <div class="day-number">01</div>
@@ -193,27 +180,23 @@ footer strong{color:var(--gold);}
       <span class="day-tag">落地 → 靜安寺 → 弄堂麵館 → 靜安夜景</span>
     </div>
   </div>
-
   <div class="hotel-card">
     <div class="hotel-icon">🏠</div>
     <div class="hotel-body">
       <div class="hotel-name">Tonight Homestay Jing'an Temple Branch</div>
       <div class="hotel-meta">📍 靜安區南京西路一帶 · 地鐵2號線靜安寺站步行可達</div>
       <div class="hotel-perks">
-        <span class="hotel-perk">步行到靜安寺</span>
-        <span class="hotel-perk">地鐵2號線直通外灘/機場</span>
-        <span class="hotel-perk">弄堂麵館10分鐘</span>
-        <span class="hotel-perk">武康路15分鐘</span>
+        <span class="hotel-perk">步行到靜安寺</span><span class="hotel-perk">2號線直通外灘/機場</span>
+        <span class="hotel-perk">弄堂麵館10分鐘</span><span class="hotel-perk">武康路15分鐘</span>
       </div>
     </div>
   </div>
-
   <div class="timeline">
     <div class="event"><div class="event-dot dot-ink"></div>
       <div class="event-card type-transport">
         <div class="event-meta"><span class="event-icon">✈️</span><span class="event-type-label label-transport">交通</span><span class="event-time">16:30 落地</span></div>
         <h3 class="event-title">抵達浦東國際機場（PVG）</h3>
-        <p class="event-desc">通關＋取行李約60–90分鐘。建議地鐵2號線全程直達靜安寺（約50分鐘）。或磁浮到龍陽路再轉2號線，快但貴。</p>
+        <p class="event-desc">通關＋取行李約60–90分鐘。地鐵2號線直達靜安寺（約50分鐘）最省錢，終點站即民宿附近，不需換車。或磁浮到龍陽路再轉2號線，快10分鐘但多¥43。</p>
         <div class="badges"><span class="badge badge-price">全程地鐵 ¥7</span><span class="badge badge-price">磁浮+地鐵 ¥54</span><span class="badge badge-tip">💡 先開通支付寶國際版</span></div>
       </div>
     </div>
@@ -221,14 +204,14 @@ footer strong{color:var(--gold);}
       <div class="event-card type-hotel">
         <div class="event-meta"><span class="event-icon">🏠</span><span class="event-type-label label-hotel">住宿</span><span class="event-time">約 18:00</span></div>
         <h3 class="event-title">入住 Tonight Homestay 靜安寺店</h3>
-        <p class="event-desc">放好行李稍作休息。民宿絕佳位置：往東地鐵直通外灘，往南15分鐘到武康路，2號線直達機場，行程交通全部無縫銜接。</p>
+        <p class="event-desc">放好行李稍作休息。往東地鐵直通外灘，往南15分鐘到武康路，2號線直達機場，五天行程全程不浪費交通時間。</p>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">晚餐</span><span class="event-time">19:00–20:30</span></div>
         <h3 class="event-title">弄堂麵館（威海路665號）</h3>
-        <p class="event-desc">Google 評分 4.8 的神級弄堂麵館，步行10分鐘。菜單寫在牆上，豬肝拌麵、炸豬排配辣醬油是招牌，阿姨親自教你怎麼吃。排隊20–30分鐘，完全值得。</p>
+        <p class="event-desc">Google 評分 4.8，步行10分鐘。菜單寫在牆上，豬肝拌麵、炸豬排配辣醬油是招牌，阿姨親自教你怎麼吃。排隊20–30分鐘，完全值得。</p>
         <div class="badges"><span class="badge badge-star">⭐ Google 4.8</span><span class="badge badge-price">人均 ¥30–50</span></div>
       </div>
     </div>
@@ -236,21 +219,31 @@ footer strong{color:var(--gold);}
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🏛️</span><span class="event-type-label label-sight">夜景</span><span class="event-time">21:00–22:00</span></div>
         <h3 class="event-title">靜安寺夜景散步</h3>
-        <p class="event-desc">飯後漫步至靜安寺外圍，夜晚金碧輝煌的靜安寺與旁邊現代高樓形成強烈對比，是上海獨有的衝突之美，完全免費。</p>
+        <p class="event-desc">飯後漫步至靜安寺外圍，夜晚金碧輝煌的古剎被現代高樓包圍，這種東西對比的衝突感是上海獨有的魅力。完全免費，人流也比白天少很多。</p>
         <div class="badges"><span class="badge badge-price">免費</span></div>
       </div>
+    </div>
+  </div>
+
+  <!-- 景色建議 DAY1 -->
+  <div class="scene-box">
+    <p class="scene-title">📸 靜安寺 · 拍照與景色建議</p>
+    <div class="scene-grid">
+      <div class="scene-item"><div class="scene-time">🌅 早晨 7:30–9:00</div><div class="scene-desc">早上開門人最少，晨光打在金色屋頂上，莊嚴感最強。梵唱聲配上都市背景，非常震撼。</div></div>
+      <div class="scene-item"><div class="scene-time">🌙 夜間 20:00後</div><div class="scene-desc">燈光亮起後，金色塔頂倒映光暈，對比旁邊的霓虹商場，是上海最有「魔幻對比感」的場景。</div></div>
+      <div class="scene-item"><div class="scene-time">☁️ 6月特別提醒</div><div class="scene-desc">6月上海進入梅雨季，雨天後空氣清透，積水反射靜安寺倒影，是意外的絕佳拍攝時機。</div></div>
+      <div class="scene-item"><div class="scene-time">📷 拍攝機位</div><div class="scene-desc">站在南京西路路口正對面，以商場玻璃帷幕作背景可拍「古今對比」。推薦用廣角把整棟建築收入。</div></div>
     </div>
   </div>
 
   <!-- MAP DAY1 -->
   <div class="map-wrap">
     <div class="map-bar">
-      <span>📍</span>
-      <span class="map-bar-title">靜安寺周邊地圖</span>
-      <a class="map-bar-link" href="https://maps.google.com/?q=31.2235,121.4453&z=15" target="_blank" rel="noopener">在 Google Maps 開啟 ↗</a>
+      <span>📍</span><span class="map-bar-title">靜安寺周邊地圖</span>
+      <a class="map-bar-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E5%AF%BA+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJVV1KHv5vsjURQgiHHZfGW3o" target="_blank" rel="noopener">Google Maps ↗</a>
     </div>
     <div class="map-frames">
-      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.430%2C31.215%2C121.460%2C31.232&layer=mapnik&marker=31.2235%2C121.4453" loading="lazy"></iframe>
+      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.432%2C31.215%2C121.462%2C31.233&layer=mapnik&marker=31.2235%2C121.4453" loading="lazy" title="靜安寺地圖"></iframe>
     </div>
   </div>
 
@@ -258,47 +251,47 @@ footer strong{color:var(--gold);}
   <div class="nearby-section">
     <p class="nearby-title">✦ 6/24 附近可去的地方</p>
     <div class="nearby-grid">
-      <a class="nearby-card" href="https://maps.google.com/?cid=8816859047845627970" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E5%AF%BA&query_place_id=ChIJVV1KHv5vsjURQgiHHZfGW3o" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🏛️</span><span class="nc-rating">⭐ 4.5</span></div>
         <div class="nc-name">靜安寺</div>
-        <div class="nc-desc">247年古剎，金色塔頂在高樓間閃耀，步行即到，晨早7:30開放。</div>
+        <div class="nc-desc">247年古剎，金色塔頂在高樓間閃耀，晨早7:30開放，進入參拜需購票。</div>
         <span class="nc-tag">票 ¥50</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?cid=14046989024578052964" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E5%85%AC%E5%9C%92+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJCyri0QFwsjURRF2IVGNdTvc" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🌿</span><span class="nc-rating">⭐ 4.5</span></div>
         <div class="nc-name">靜安公園</div>
-        <div class="nc-desc">靜安寺旁的城市綠洲，老上海人在此唱歌跳舞，感受真實在地生活。</div>
+        <div class="nc-desc">靜安寺旁城市綠洲，老上海人在此唱歌跳舞，感受最真實的在地日常。</div>
         <span class="nc-tag nc-free">免費</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?cid=1459995542277109043" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🥟</span><span class="nc-rating">⭐ 4.4</span></div>
-        <div class="nc-name">小楊生煎（靜安店）</div>
-        <div class="nc-desc">越洋廣場B2，皮薄湯多的生煎，若弄堂麵館排隊太久的備選。</div>
-        <span class="nc-tag">¥20–30</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?cid=10588780571660677914" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🛍️</span><span class="nc-rating">⭐ 4.5</span></div>
-        <div class="nc-name">靜安嘉里中心</div>
-        <div class="nc-desc">高端商場，頂層有多間餐廳酒吧，雨天備案或閒逛購物。</div>
-        <span class="nc-tag">10:00–22:00</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?cid=17175847069696697751" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">☕</span><span class="nc-rating">⭐ 4.1</span></div>
-        <div class="nc-name">Seesaw Coffee（愚園路）</div>
-        <div class="nc-desc">上海精品咖啡代表品牌，白色木質旋轉樓梯是打卡亮點。</div>
-        <span class="nc-tag">9:00–22:00</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u9759\u5b89\u96d5\u5851\u516c\u56ed+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E9%9B%95%E5%A1%91%E5%85%AC%E5%9C%92+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJsbws7BVwsjURHcQOJedzqAA" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🎨</span><span class="nc-rating">⭐ 4.5</span></div>
         <div class="nc-name">靜安雕塑公園</div>
-        <div class="nc-desc">免費現代雕塑公園，內有自然博物館，散步拍照絕佳。</div>
+        <div class="nc-desc">免費現代雕塑公園，內有上海自然博物館（¥30），散步拍照絕佳，距民宿步行15分鐘。</div>
         <span class="nc-tag nc-free">公園免費</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=Seesaw+Coffee+%E4%B8%8A%E6%B5%B7+%E6%84%9A%E5%9C%92%E8%B7%AF&query_place_id=ChIJlaGrMf9vsjURW7PQlizKr1g" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">☕</span><span class="nc-rating">⭐ 4.1</span></div>
+        <div class="nc-name">Seesaw Coffee（愚園路）</div>
+        <div class="nc-desc">上海精品咖啡代表品牌，白色木質旋轉樓梯是網紅打卡亮點，9:00起開放。</div>
+        <span class="nc-tag">9:00–22:00</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E5%98%89%E9%87%8C%E4%B8%AD%E5%BF%83+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJc5vLfAFwsjURsTGM1-7HIpA" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🛍️</span><span class="nc-rating">⭐ 4.5</span></div>
+        <div class="nc-name">靜安嘉里中心</div>
+        <div class="nc-desc">高端商場，頂層多間餐廳酒吧，雨天備案；有Blue Bottle Coffee進駐。</div>
+        <span class="nc-tag">10:00–22:00</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%AC%E5%8B%92%E5%88%A5%E5%A2%85+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🏰</span></div>
+        <div class="nc-name">馬勒別墅</div>
+        <div class="nc-desc">1936年諾曼地風格老洋房，現為酒店，外觀免費拍照，離民宿步行10分鐘。</div>
+        <span class="nc-tag nc-free">外觀免費</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- ════ DAY 2 ════ -->
+<!-- ══ DAY 2 ══ -->
 <div class="day-panel" id="day1">
   <div class="day-header">
     <div class="day-number">02</div>
@@ -313,15 +306,15 @@ footer strong{color:var(--gold);}
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🥟</span><span class="event-type-label label-food">早餐</span><span class="event-time">07:00</span></div>
         <h3 class="event-title">小楊生煎（靜安寺店）</h3>
-        <p class="event-desc">出發前補一頓，越洋廣場B2，步行即到。皮薄湯多的招牌鮮肉生煎，迪士尼一整天需要充足體力！</p>
-        <div class="badges"><span class="badge badge-price">人均 ¥20–30</span><span class="badge badge-tip">💡 不收現金，備好支付寶</span></div>
+        <p class="event-desc">越洋廣場B2，步行即到，先補體力。皮薄湯多的鮮肉生煎，比城隍廟版更受本地人認可。迪士尼全天需要充足體力，不要空腹出發。</p>
+        <div class="badges"><span class="badge badge-price">人均 ¥20–30</span><span class="badge badge-tip">💡 備好支付寶付款</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-ink"></div>
       <div class="event-card type-transport">
         <div class="event-meta"><span class="event-icon">🚇</span><span class="event-type-label label-transport">交通</span><span class="event-time">07:30 出門</span></div>
         <h3 class="event-title">地鐵前往迪士尼</h3>
-        <p class="event-desc">靜安寺站 → 2號線 → 11號線 → 迪士尼站1號出口（約55分鐘）。搶早享卡者建議叫滴滴，靜安寺→迪士尼約¥100–130，快20分鐘。</p>
+        <p class="event-desc">靜安寺站→2號線→11號線→迪士尼站1號出口（約55分鐘）。搶早享卡者建議叫滴滴，靜安寺到迪士尼約¥100–130，省20分鐘且避人潮。</p>
         <div class="badges"><span class="badge badge-price">地鐵 ¥9</span><span class="badge badge-price">滴滴 ¥100–130</span></div>
       </div>
     </div>
@@ -329,72 +322,70 @@ footer strong{color:var(--gold);}
       <div class="event-card type-fun">
         <div class="event-meta"><span class="event-icon">🎡</span><span class="event-type-label label-fun">主題樂園</span><span class="event-time">08:30–21:00</span></div>
         <h3 class="event-title">上海迪士尼樂園</h3>
-        <p class="event-desc">必玩順序：① TRON創極速光輪（一入園立刻衝）② 飛越地平線 ③ 瘋狂動物城熱力追蹤 ④ 加勒比海盜 ⑤ 七矮人礦山車。20:30煙火壓軸。</p>
-        <div class="badges"><span class="badge badge-price">門票 ¥475–599</span><span class="badge badge-tip">早享卡 +¥100</span><span class="badge badge-tip">KKday/Klook 提前買</span></div>
+        <p class="event-desc">必玩順序：① TRON創極速光輪（一入園立刻衝，旺季排90分鐘）② 飛越地平線 ③ 瘋狂動物城熱力追蹤（全球首個Zootopia園區）④ 加勒比海盜 ⑤ 七矮人礦山車。20:30煙火壓軸。</p>
+        <div class="badges"><span class="badge badge-price">門票 ¥475–599（6月平日）</span><span class="badge badge-tip">早享卡 +¥100</span><span class="badge badge-tip">KKday/Klook提前買</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🍽️</span><span class="event-type-label label-food">園內餐飲</span><span class="event-time">全天</span></div>
         <h3 class="event-title">迪士尼小鎮港式茶餐廳</h3>
-        <p class="event-desc">園內CP值最高選擇，牛叉飯份量大。官方允許帶密封食品入園，可從民宿帶零食。</p>
+        <p class="event-desc">園內CP值最高選擇，牛叉飯份量大。官方允許帶密封食品入園，可從民宿帶零食省費用。</p>
         <div class="badges"><span class="badge badge-price">人均 ¥50–100</span></div>
       </div>
     </div>
   </div>
-
   <div class="choice-box">
     <p class="choice-title">✦ 迪士尼方案選擇</p>
-    <div class="choice-item"><span class="choice-tag">省錢版</span><span class="choice-text">標準門票 ¥475 + 地鐵，07:30前到排早班隊伍</span></div>
-    <div class="choice-item"><span class="choice-tag">舒適版</span><span class="choice-text">門票 + 早享卡 ¥100，提早1小時入園輕鬆刷熱門設施</span></div>
-    <div class="choice-item"><span class="choice-tag">豪華版</span><span class="choice-text">住迪士尼官方酒店，免費早享 + VIP通道，省30分鐘排隊</span></div>
+    <div class="choice-item"><span class="choice-tag">省錢版</span><span class="choice-text">標準門票 ¥475 + 地鐵，07:30前到排早班隊伍，全靠策略</span></div>
+    <div class="choice-item"><span class="choice-tag">舒適版</span><span class="choice-text">門票 + 早享卡 ¥100，提早1小時入園，輕鬆刷熱門設施</span></div>
+    <div class="choice-item"><span class="choice-tag">豪華版</span><span class="choice-text">住迪士尼官方酒店，免費早享 + VIP通道，省排隊30分鐘</span></div>
   </div>
 
   <!-- MAP DAY2 -->
   <div class="map-wrap">
     <div class="map-bar">
-      <span>📍</span>
-      <span class="map-bar-title">迪士尼樂園位置</span>
-      <a class="map-bar-link" href="https://maps.google.com/?cid=7643750451235837100" target="_blank" rel="noopener">在 Google Maps 開啟 ↗</a>
+      <span>📍</span><span class="map-bar-title">上海迪士尼樂園位置</span>
+      <a class="map-bar-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E6%B5%B7%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%A8%82%E5%9C%92&query_place_id=ChIJeTeSUGiHrTURrNSkfYkOFGo" target="_blank" rel="noopener">Google Maps ↗</a>
     </div>
     <div class="map-frames">
-      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.640%2C31.130%2C121.675%2C31.158&layer=mapnik&marker=31.1434%2C121.6579" loading="lazy"></iframe>
+      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.640%2C31.128%2C121.678%2C31.160&layer=mapnik&marker=31.1434%2C121.6579" loading="lazy" title="迪士尼樂園地圖"></iframe>
     </div>
   </div>
 
   <!-- NEARBY DAY2 -->
   <div class="nearby-section">
-    <p class="nearby-title">✦ 6/25 迪士尼周邊 / 若時間剩餘</p>
+    <p class="nearby-title">✦ 6/25 迪士尼周邊 / 若還有時間</p>
     <div class="nearby-grid">
-      <a class="nearby-card" href="https://maps.google.com/?q=\u8fea\u58eb\u5c3c\u5c0f\u9547+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%B0%8F%E9%8E%AE+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🛍️</span></div>
         <div class="nc-name">迪士尼小鎮</div>
-        <div class="nc-desc">緊鄰樂園的購物娛樂區，免費入場，有餐廳、紀念品店，出園後可逛。</div>
+        <div class="nc-desc">緊鄰樂園的購物娛樂區，免費入場，有餐廳、紀念品店，出園後可逛到22:00。</div>
         <span class="nc-tag nc-free">免費入場</span>
       </a>
       <a class="nearby-card" href="https://www.shanghaidisneyresort.com/tc/" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">📱</span></div>
         <div class="nc-name">迪士尼官方網站</div>
-        <div class="nc-desc">查最新開放時間、煙火時刻表、App下載，出發前必確認。</div>
+        <div class="nc-desc">查最新開放時間、煙火時刻、App下載；出發前必確認，偶有特殊閉館日。</div>
         <span class="nc-tag">官方資訊</span>
       </a>
       <a class="nearby-card" href="https://www.klook.com/zh-TW/activity/2128-disney-resort-shang-hai/" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🎫</span></div>
         <div class="nc-name">Klook 購票頁面</div>
-        <div class="nc-desc">比官網更方便，台幣付款，可搭配早享卡、餐飲券組合購買。</div>
+        <div class="nc-desc">台幣付款，可組合早享卡、餐飲券，比官網現場買划算。</div>
         <span class="nc-tag">線上購票</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5c71\u7b49\u5718\u5167\u9999\u685c\u51b0\u6de0\u5e97+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🌸</span></div>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E6%B5%B7%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🦁</span></div>
         <div class="nc-name">上海野生動物園</div>
-        <div class="nc-desc">若帶小孩或迪士尼不夠玩，川沙附近的野生動物園是備選。</div>
+        <div class="nc-desc">川沙附近，若帶小孩或迪士尼玩完還有餘力，可搭滴滴前往。</div>
         <span class="nc-tag">需另行前往</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- ════ DAY 3 ════ -->
+<!-- ══ DAY 3 ══ -->
 <div class="day-panel" id="day2">
   <div class="day-header">
     <div class="day-number">03</div>
@@ -407,9 +398,9 @@ footer strong{color:var(--gold);}
   <div class="timeline">
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
-        <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">早餐</span><span class="event-time">08:30–09:30</span></div>
-        <h3 class="event-title">弄堂麵館（威海路665號）</h3>
-        <p class="event-desc">第二訪，試試辣肉麵或豬油渣拌麵。麵條免費加，阿姨服務有溫度，是上海最道地的早晨體驗。</p>
+        <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">早餐</span><span class="event-time">08:30</span></div>
+        <h3 class="event-title">弄堂麵館（威海路665號）二訪</h3>
+        <p class="event-desc">試試辣肉麵或豬油渣拌麵，麵條免費加，是上海最道地的早晨體驗。</p>
         <div class="badges"><span class="badge badge-star">⭐ Google 4.8</span><span class="badge badge-price">人均 ¥30–50</span></div>
       </div>
     </div>
@@ -417,15 +408,15 @@ footer strong{color:var(--gold);}
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🏯</span><span class="event-type-label label-sight">景點</span><span class="event-time">10:00–12:00</span></div>
         <h3 class="event-title">豫園 + 城隍廟商圈</h3>
-        <p class="event-desc">地鐵2號線→10號線至豫園站。明代江南古典園林，九曲橋、湖心亭、大假山必逛。城隍廟商圈嚐梨膏露、蟹殼黃。週一閉園（本日週四正常）。</p>
-        <div class="badges"><span class="badge badge-price">豫園 ¥30–40</span><span class="badge badge-price">城隍廟免費</span></div>
+        <p class="event-desc">地鐵2號線→10號線至豫園站。明代江南古典園林，九曲橋、湖心亭、大假山必逛。城隍廟商圈嚐梨膏露、蟹殼黃。週一閉園，本日週四正常。</p>
+        <div class="badges"><span class="badge badge-price">豫園 ¥30–40</span><span class="badge badge-price">城隍廟免費</span><span class="badge badge-tip">💡 地鐵約25分鐘</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🥟</span><span class="event-type-label label-food">午餐</span><span class="event-time">12:00–13:00</span></div>
         <h3 class="event-title">南翔饅頭店（豫園店）</h3>
-        <p class="event-desc">百年老字號非遺小籠包，避開12點高峰排隊僅15–30分鐘。蟹粉灌湯包、野菜小籠都值得點。</p>
+        <p class="event-desc">百年老字號非遺小籠包。避開12點高峰，早上排隊僅15–30分鐘。蟹粉灌湯包皮薄湯多必點。</p>
         <div class="badges"><span class="badge badge-price">小籠6個 ¥25</span><span class="badge badge-price">蟹粉包 ¥35</span></div>
       </div>
     </div>
@@ -433,15 +424,15 @@ footer strong{color:var(--gold);}
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🏛️</span><span class="event-type-label label-sight">景點</span><span class="event-time">14:00–17:30</span></div>
         <h3 class="event-title">外灘漫步・萬國建築群</h3>
-        <p class="event-desc">沿中山東一路步行，52棟萬國建築。傍晚18:30燈光全亮，對岸陸家嘴天際線逐漸點亮，是上海最標誌性畫面。建議17:00到先拍日景再等夜景。</p>
-        <div class="badges"><span class="badge badge-price">免費</span><span class="badge badge-tip">💡 提前霸靠欄杆的位置</span></div>
+        <p class="event-desc">沿中山東一路步行，52棟萬國建築。建議17:00到，先在日光下欣賞建築細節，等待18:30燈光全亮，對岸陸家嘴三件套同步點亮，那是上海最標誌性的一刻。</p>
+        <div class="badges"><span class="badge badge-price">免費</span><span class="badge badge-tip">💡 提前霸靠欄杆位置</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🍽️</span><span class="event-type-label label-food">晚餐</span><span class="event-time">17:30–18:30</span></div>
         <h3 class="event-title">綠波廊（本幫菜）｜連續8屆必比登</h3>
-        <p class="event-desc">豫園出口旁，2023年列入上海市非物質文化遺產。紅燒鮰魚年糕、蝴蝶酥為招牌。打卡送桂花拉糕。</p>
+        <p class="event-desc">豫園出口旁，2023年入選上海市非物質文化遺產。紅燒鮰魚年糕、蝴蝶酥為招牌。打卡送桂花拉糕。</p>
         <div class="badges"><span class="badge badge-star">🌟 連8屆必比登</span><span class="badge badge-price">人均 ¥150–200</span></div>
       </div>
     </div>
@@ -449,25 +440,35 @@ footer strong{color:var(--gold);}
       <div class="event-card type-cruise">
         <div class="event-meta"><span class="event-icon">🚢</span><span class="event-type-label label-cruise">夜遊</span><span class="event-time">19:30–21:00</span></div>
         <h3 class="event-title">黃浦江夜遊（十六鋪碼頭）</h3>
-        <p class="event-desc">1小時精華遊覽東方明珠、上海中心、外白渡橋兩岸夜景。夜航取票17:00–20:30，先取票再吃晚餐！</p>
+        <p class="event-desc">1小時飽覽兩岸：東方明珠、上海中心、外白渡橋、萬國建築群。夜航取票17:00–20:30，先取票再吃晚餐！</p>
         <div class="badges"><span class="badge badge-price">船票 ¥100–160</span><span class="badge badge-tip">💡 美團/大眾點評更便宜</span></div>
       </div>
     </div>
   </div>
 
+  <!-- 景色建議 DAY3 -->
+  <div class="scene-box">
+    <p class="scene-title">📸 外灘 · 不同角度景色建議（爬文整理）</p>
+    <div class="scene-grid">
+      <div class="scene-item"><div class="scene-time">🌉 乍浦路橋機位</div><div class="scene-desc">外灘最強拍照點之一，一邊可拍陸家嘴三件套＋東方明珠＋外白渡橋全景，另一側拍上海郵政總局，夜間亮燈後特別美。</div></div>
+      <div class="scene-item"><div class="scene-time">🌙 藍調時刻（日落後30分鐘）</div><div class="scene-desc">據攝影師實測，日落後30分鐘是最佳拍攝時機，天空呈深藍色，江面倒影清晰，建築燈光不過曝，這段時間約20分鐘要把握。</div></div>
+      <div class="scene-item"><div class="scene-time">📺 《繁花》拍攝地</div><div class="scene-desc">和平飯店側門的滇池路，昏黃路燈街景半舊，關閉閃光燈可拍出《花樣年華》感；滇池路也是唯一可以安全停車上下車的位置。</div></div>
+      <div class="scene-item"><div class="scene-time">🚢 對岸視角</div><div class="scene-desc">坐¥2輪渡到浦東，從陸家嘴濱江大道往回看外灘萬國建築群，角度完全不同，是大多數人沒拍到的視角。可搭配Day3夜遊一起體驗。</div></div>
+    </div>
+  </div>
+
   <div class="choice-box">
     <p class="choice-title">✦ 黃浦江夜遊方案</p>
-    <div class="choice-item"><span class="choice-tag">省錢版</span><span class="choice-text">¥2 輪渡（金陵東路→東昌路），5分鐘渡江免費賞夜景</span></div>
-    <div class="choice-item"><span class="choice-tag">標準版</span><span class="choice-text">十六鋪碼頭觀光遊船 ¥100–160，1小時精華遊</span></div>
-    <div class="choice-item"><span class="choice-tag">豪華版</span><span class="choice-text">申城之光晚餐遊船（含海鮮自助餐）人均 ¥250–350</span></div>
+    <div class="choice-item"><span class="choice-tag">省錢版</span><span class="choice-text">¥2 輪渡（金陵東路→東昌路），5分鐘渡江，站甲板免費賞夜景，體驗當地人通勤感</span></div>
+    <div class="choice-item"><span class="choice-tag">標準版</span><span class="choice-text">十六鋪碼頭觀光遊船 ¥100–160，1小時精華遊，含語音導覽</span></div>
+    <div class="choice-item"><span class="choice-tag">豪華版</span><span class="choice-text">申城之光晚餐遊船（含海鮮自助餐）人均 ¥250–350，邊吃邊賞景</span></div>
   </div>
 
   <!-- MAP DAY3 -->
   <div class="map-wrap">
     <div class="map-bar">
-      <span>📍</span>
-      <span class="map-bar-title">豫園 · 外灘 · 十六鋪 路線圖</span>
-      <a class="map-bar-link" href="https://maps.google.com/maps/dir/31.2272,121.4921/31.2403,121.4906/31.2276,121.4985" target="_blank" rel="noopener">Google Maps 導航 ↗</a>
+      <span>📍</span><span class="map-bar-title">豫園 · 外灘 · 十六鋪 路線圖</span>
+      <a class="map-bar-link" href="https://www.google.com/maps/dir/?api=1&origin=31.2272,121.4921&destination=31.2276,121.4985&waypoints=31.2403,121.4906" target="_blank" rel="noopener">Google Maps 路線 ↗</a>
     </div>
     <div class="map-tabs" id="tabs3">
       <button class="map-tab-btn active" onclick="swMap('frames3','tabs3',0)">豫園</button>
@@ -475,9 +476,9 @@ footer strong{color:var(--gold);}
       <button class="map-tab-btn" onclick="swMap('frames3','tabs3',2)">十六鋪碼頭</button>
     </div>
     <div class="map-frames" id="frames3">
-      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.482%2C31.220%2C121.502%2C31.234&layer=mapnik&marker=31.2272%2C121.4921" loading="lazy"></iframe>
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.481%2C31.233%2C121.501%2C31.247&layer=mapnik&marker=31.2403%2C121.4906" loading="lazy"></iframe>
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.489%2C31.221%2C121.509%2C31.234&layer=mapnik&marker=31.2276%2C121.4985" loading="lazy"></iframe>
+      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.482%2C31.220%2C121.503%2C31.234&layer=mapnik&marker=31.2272%2C121.4921" loading="lazy" title="豫園地圖"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.480%2C31.233%2C121.501%2C31.248&layer=mapnik&marker=31.2403%2C121.4906" loading="lazy" title="外灘地圖"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.489%2C31.221%2C121.510%2C31.235&layer=mapnik&marker=31.2276%2C121.4985" loading="lazy" title="十六鋪碼頭地圖"></iframe>
     </div>
   </div>
 
@@ -485,47 +486,47 @@ footer strong{color:var(--gold);}
   <div class="nearby-section">
     <p class="nearby-title">✦ 6/26 附近可替代或加遊的地方</p>
     <div class="nearby-grid">
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5916\u7058\u89c0\u666f\u5927\u9053+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🌃</span><span class="nc-rating">⭐ 4.8</span></div>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%96%E7%81%98+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJYUiHi1dwsjURZK_REO37Vk0" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🌃</span><span class="nc-rating">⭐ 4.7</span></div>
         <div class="nc-name">外灘觀景大道</div>
-        <div class="nc-desc">外灘最佳賞景位置，傍晚7–8點人流高峰，早到搶靠江欄杆。</div>
+        <div class="nc-desc">傍晚7–8點人流高峰。乍浦路橋機位可同時拍三件套＋東方明珠＋外白渡橋全景，是最強拍攝點。</div>
         <span class="nc-tag nc-free">免費</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5916\u7058\u9699\u9053+\u4e0a\u6d77+Bund+Sightseeing+Tunnel" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%96%E7%81%98%E8%A7%80%E5%85%89%E9%9A%A7%E9%81%93+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJJa-yxFdwsjURZAmtWrNzrXg" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🚇</span><span class="nc-rating">⭐ 3.7</span></div>
         <div class="nc-name">外灘觀光隧道</div>
-        <div class="nc-desc">連接外灘與陸家嘴的燈光隧道列車，5分鐘跨江，燈光秀有趣。評價兩極，適合好奇者。</div>
+        <div class="nc-desc">連接外灘與陸家嘴的燈光隧道列車，5分鐘跨江，燈光秀有趣。評價兩極，適合好奇者試試。</div>
         <span class="nc-tag">¥55 單程</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u4e0a\u6d77\u535a\u7269\u9928\u4eba\u6c11\u5ee3\u5834\u9928" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A4%A8+%E4%BA%BA%E6%B0%91%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🏛️</span></div>
         <div class="nc-name">上海博物館（人民廣場館）</div>
-        <div class="nc-desc">青銅器、陶瓷、書畫館藏豐富，若豫園逛完時間充裕可順道。需提前7天預約。</div>
+        <div class="nc-desc">青銅器、陶瓷、書畫館藏豐富，動態清明上河圖在此展出，需提前7天預約。</div>
         <span class="nc-tag nc-free">免費需預約</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5357\u4eac\u8def\u6b65\u884c\u8857+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E4%BA%AC%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🛍️</span></div>
         <div class="nc-name">南京路步行街</div>
-        <div class="nc-desc">5.5公里百年老字號購物街，沈大成青團、泰康鮮肉月餅邊走邊吃。</div>
-        <span class="nc-tag nc-free">免費</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u65b0\u5929\u5730+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🏮</span><span class="nc-rating">⭐ 4.6</span></div>
-        <div class="nc-name">新天地</div>
-        <div class="nc-desc">石庫門老建築改造的時尚街區，夜晚酒吧熱鬧，若遊船結束還有精力可前往。</div>
+        <div class="nc-desc">5.5公里百年老字號商街，沈大成青團、泰康鮮肉月餅邊走邊吃，距外灘步行10分鐘。</div>
         <span class="nc-tag nc-free">免費逛</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u4e2d\u83ef\u85dd\u8853\u5bae+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🎨</span></div>
-        <div class="nc-name">中華藝術宮（原世博館）</div>
-        <div class="nc-desc">動態版清明上河圖在此展出，免費入場，適合有餘裕的下午。</div>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%A4%A9%E5%9C%B0+%E4%B8%8A%E6%B5%B7&query_place_id=ChIJM7Ffg3FwsjURJhV09LX1oqI" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🏮</span></div>
+        <div class="nc-name">新天地</div>
+        <div class="nc-desc">石庫門老建築改造的時尚街區，夜晚酒吧熱鬧，遊船結束後若還有精力可前往。</div>
+        <span class="nc-tag nc-free">免費逛</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%99%B8%E5%AE%B6%E5%98%B4%E6%BF%B1%E6%B1%9F%E5%A4%A7%E9%81%93+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🚶</span></div>
+        <div class="nc-name">陸家嘴濱江大道</div>
+        <div class="nc-desc">從浦東角度回望外灘萬國建築群，與外灘視角完全不同，坐輪渡¥2跨江即到。</div>
         <span class="nc-tag nc-free">免費</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- ════ DAY 4 ════ -->
+<!-- ══ DAY 4 ══ -->
 <div class="day-panel" id="day3">
   <div class="day-header">
     <div class="day-number">04</div>
@@ -538,9 +539,9 @@ footer strong{color:var(--gold);}
   <div class="timeline">
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
-        <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">早餐</span><span class="event-time">08:30–09:30</span></div>
+        <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">早餐</span><span class="event-time">08:30</span></div>
         <h3 class="event-title">弄堂麵館（威海路665號）三訪</h3>
-        <p class="event-desc">住靜安寺最大的福利。今天試試辣肉麵，配炸豬排沾辣醬油，是最道地上海早晨的吃法。</p>
+        <p class="event-desc">住靜安寺最大福利。今天試試辣肉麵配炸豬排沾辣醬油，是最道地的上海早晨吃法，三天都來值得。</p>
         <div class="badges"><span class="badge badge-star">⭐ Google 4.8</span><span class="badge badge-price">人均 ¥30–50</span></div>
       </div>
     </div>
@@ -548,54 +549,64 @@ footer strong{color:var(--gold);}
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🌳</span><span class="event-type-label label-sight">景點</span><span class="event-time">10:00–12:00</span></div>
         <h3 class="event-title">武康路 + 安福路漫步</h3>
-        <p class="event-desc">從民宿地鐵或滴滴15分鐘。武康大樓（1924年郵輪造型）是必拍地標，梧桐樹下咖啡館、選物店林立。上午人少光線好。</p>
-        <div class="badges"><span class="badge badge-price">免費</span><span class="badge badge-tip">💡 上午人少光線最佳</span></div>
+        <p class="event-desc">從民宿地鐵10號線到交通大學站7號口，步行到武康大樓。街角斜角拍建築全景最出片；上午人少光線好。沿路13 DE MARZO熊熊咖啡館、DS.三明治都是網紅打卡熱點。</p>
+        <div class="badges"><span class="badge badge-price">免費</span><span class="badge badge-tip">💡 上午光線最佳，下午人多難拍</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🍜</span><span class="event-type-label label-food">午餐</span><span class="event-time">12:00–13:30</span></div>
         <h3 class="event-title">田子坊周邊本幫菜 / 雲和麵館</h3>
-        <p class="event-desc">田子坊石庫門弄堂文創區用餐，周邊有評分高的本幫菜。若要吃必比登推薦的雲和麵館蟹粉麵，需提前訂位。</p>
-        <div class="badges"><span class="badge badge-price">雲和麵館人均 ¥60–90</span><span class="badge badge-tip">💡 必須提前訂位</span></div>
+        <p class="event-desc">田子坊石庫門弄堂文創區，周邊有多間高評分本幫菜。若要吃必比登推薦的雲和麵館蟹粉麵，需提前訂位，用餐時間人滿為患。</p>
+        <div class="badges"><span class="badge badge-price">雲和麵館 人均 ¥60–90</span><span class="badge badge-tip">💡 必須提前訂位</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-teal"></div>
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🏙️</span><span class="event-type-label label-sight">景點</span><span class="event-time">14:30–17:00</span></div>
         <h3 class="event-title">上海中心大廈（上海之巔）</h3>
-        <p class="event-desc">632米全中國最高，全球最快電梯18m/秒，118樓360度俯瞰全城，黃浦江如絲帶蜿蜒穿城，日落前到最美。</p>
-        <div class="badges"><span class="badge badge-star">⭐ Google 4.6</span><span class="badge badge-price">觀光廳 ¥180起</span></div>
+        <p class="event-desc">632米全中國最高，全球最快電梯18m/秒，118樓360度俯瞰全城。黃浦江如絲帶蜿蜒穿城，建議日落前到，從白天看到夜幕降臨，光線轉換最美。</p>
+        <div class="badges"><span class="badge badge-price">觀光廳 ¥180起</span><span class="badge badge-price">東方明珠聯票 ¥199（替代選項）</span></div>
       </div>
     </div>
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
-        <div class="event-meta"><span class="event-icon">🦐</span><span class="event-type-label label-food">晚餐</span><span class="event-time">18:00–20:00</span></div>
+        <div class="event-meta"><span class="event-icon">🦐</span><span class="event-type-label label-food">晚餐+夜晚</span><span class="event-time">18:00 之後</span></div>
         <h3 class="event-title">新天地周邊本幫菜 + 夜晚</h3>
-        <p class="event-desc">石庫門老建築，推薦油爆蝦、紅燒肉等本幫名菜。飯後逛新天地酒吧街或回武康路夜間漫步。</p>
+        <p class="event-desc">石庫門老建築搭配現代餐廳，推薦油爆蝦、紅燒肉等本幫名菜。飯後逛新天地酒吧街或回武康路夜間漫步，感受兩種不同氛圍。</p>
         <div class="badges"><span class="badge badge-price">人均 ¥100–150</span></div>
       </div>
+    </div>
+  </div>
+
+  <!-- 景色建議 DAY4 -->
+  <div class="scene-box">
+    <p class="scene-title">📸 武康路 · 季節與拍攝建議（爬文整理）</p>
+    <div class="scene-grid">
+      <div class="scene-item"><div class="scene-time">☀️ 6月最佳時段</div><div class="scene-desc">6月武康路梧桐樹葉正茂，形成濃密綠色隧道，上午10點前陽光斜射樹葉，光影穿透效果最美，下午容易逆光。</div></div>
+      <div class="scene-item"><div class="scene-time">📸 武康大樓拍法</div><div class="scene-desc">街角斜角45度拍整棟三角造型，建議用廣角。旁邊Apoli Itabakery麵包屋門口也是熱門拍照點，剛好在對面。</div></div>
+      <div class="scene-item"><div class="scene-time">🚶 余慶路小秘境</div><div class="scene-desc">武康路旁的余慶路是「永不拓寬的馬路」，車少行人稀，梧桐樹更原始，比武康路更適合拍沒有人群的乾淨照片。</div></div>
+      <div class="scene-item"><div class="scene-time">🌙 夜間武康路</div><div class="scene-desc">夜間人潮散去，路燈昏黃打在老洋房磚牆上，《花樣年華》感十足。關掉閃光燈，關閉手機自動補光，氛圍感最強。</div></div>
     </div>
   </div>
 
   <!-- MAP DAY4 -->
   <div class="map-wrap">
     <div class="map-bar">
-      <span>📍</span>
-      <span class="map-bar-title">武康路 · 田子坊 · 陸家嘴 · 新天地</span>
-      <a class="map-bar-link" href="https://maps.google.com/maps/dir/\u6b66\u5eb7\u8def,\u4e0a\u6d77/\u7530\u5b50\u574a,\u4e0a\u6d77/\u4e0a\u6d77\u4e2d\u5fc3\u5927\u5ec8/\u65b0\u5929\u5730,\u4e0a\u6d77" target="_blank" rel="noopener">Google Maps 導航 ↗</a>
+      <span>📍</span><span class="map-bar-title">武康路 · 田子坊 · 上海中心 · 新天地</span>
+      <a class="map-bar-link" href="https://www.google.com/maps/dir/?api=1&origin=31.2084,121.4404&destination=31.2193,121.4748&waypoints=31.2088,121.4689|31.2335,121.5056" target="_blank" rel="noopener">Google Maps 路線 ↗</a>
     </div>
     <div class="map-tabs" id="tabs4">
       <button class="map-tab-btn active" onclick="swMap('frames4','tabs4',0)">武康路</button>
       <button class="map-tab-btn" onclick="swMap('frames4','tabs4',1)">田子坊</button>
-      <button class="map-tab-btn" onclick="swMap('frames4','tabs4',2)">上海中心</button>
+      <button class="map-tab-btn" onclick="swMap('frames4','tabs4',2)">上海中心大廈</button>
       <button class="map-tab-btn" onclick="swMap('frames4','tabs4',3)">新天地</button>
     </div>
     <div class="map-frames" id="frames4">
-      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.430%2C31.201%2C121.452%2C31.216&layer=mapnik&marker=31.2084%2C121.4404" loading="lazy"></iframe>
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.458%2C31.201%2C121.480%2C31.216&layer=mapnik&marker=31.2088%2C121.4689" loading="lazy"></iframe>
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.496%2C31.226%2C121.516%2C31.240&layer=mapnik&marker=31.2335%2C121.5056" loading="lazy"></iframe>
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.465%2C31.212%2C121.485%2C31.226&layer=mapnik&marker=31.2193%2C121.4748" loading="lazy"></iframe>
+      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.430%2C31.201%2C121.452%2C31.217&layer=mapnik&marker=31.2084%2C121.4404" loading="lazy" title="武康路地圖"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.458%2C31.201%2C121.480%2C31.217&layer=mapnik&marker=31.2088%2C121.4689" loading="lazy" title="田子坊地圖"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.496%2C31.226%2C121.516%2C31.241&layer=mapnik&marker=31.2335%2C121.5056" loading="lazy" title="上海中心地圖"></iframe>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=121.465%2C31.212%2C121.486%2C31.227&layer=mapnik&marker=31.2193%2C121.4748" loading="lazy" title="新天地地圖"></iframe>
     </div>
   </div>
 
@@ -603,47 +614,47 @@ footer strong{color:var(--gold);}
   <div class="nearby-section">
     <p class="nearby-title">✦ 6/27 附近可替代或加遊的地方</p>
     <div class="nearby-grid">
-      <a class="nearby-card" href="https://maps.google.com/?q=\u601d\u5357\u8def+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E4%BD%99%E6%85%B6%E8%B7%AF+%E4%B8%8A%E6%B5%B7+%E5%BE%90%E5%8C%AF" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🌳</span></div>
-        <div class="nc-name">思南路洋房街區</div>
-        <div class="nc-desc">孫中山故居、思南書局，老洋房免費逛，文藝氣氛濃厚，緊鄰新天地。</div>
+        <div class="nc-name">余慶路（隱秘版武康路）</div>
+        <div class="nc-desc">武康路旁「永不拓寬的馬路」，車少人稀，梧桐樹更原始，比武康路更適合拍沒有人群的乾淨照片。</div>
         <span class="nc-tag nc-free">免費</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=1933\u8001\u5834\u574a+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🏭</span></div>
-        <div class="nc-name">1933老場坊</div>
-        <div class="nc-desc">1930年代舊屠宰場改建的工業風藝文空間，夜晚燈光有氛圍，適合拍照。</div>
-        <span class="nc-tag nc-free">免費</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5b89\u798f\u8def+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">☕</span></div>
-        <div class="nc-name">安福路咖啡街</div>
-        <div class="nc-desc">上海最美咖啡街之一，網紅咖啡館密集，武康路逛完步行即到。</div>
-        <span class="nc-tag nc-free">免費逛</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u5f90\u5bb6\u532f\u66f8\u9662+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E6%80%9D%E5%8D%97%E8%B7%AF+%E4%B8%8A%E6%B5%B7+%E6%AD%B7%E5%8F%B2%E6%96%87%E5%8C%96%E9%A2%A8%E8%B2%8C%E5%8D%80" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">📚</span></div>
+        <div class="nc-name">思南路洋房街區</div>
+        <div class="nc-desc">孫中山故居、思南書局，老洋房免費逛，文藝氣氛濃厚，緊鄰新天地可順路。</div>
+        <span class="nc-tag nc-free">免費</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E5%BE%90%E5%AE%B6%E5%8C%AF%E6%9B%B8%E9%99%A2+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">📖</span></div>
         <div class="nc-name">徐家匯書院</div>
-        <div class="nc-desc">號稱上海最美圖書館，宏偉中庭書牆值得打卡，武康路順路可訪。</div>
+        <div class="nc-desc">號稱上海最美圖書館，宏偉中庭書牆「光啟之門」值得打卡，武康路路線延伸可訪。</div>
         <span class="nc-tag nc-free">免費參觀</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?cid=3830892174392470056" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🔭</span><span class="nc-rating">⭐ 4.6</span></div>
-        <div class="nc-name">東方明珠（替代登高）</div>
-        <div class="nc-desc">若上海中心排隊太長，東方明珠二球聯票是替代選項，263米觀光廳。</div>
-        <span class="nc-tag">¥199 聯票</span>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E5%AE%89%E7%A6%8F%E8%B7%AF+%E5%8F%B2%E7%89%B9%E5%8A%AA%E5%A7%86%E7%BE%8E%E9%A3%9F%E5%92%96%E5%95%A1+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">☕</span></div>
+        <div class="nc-name">安福路咖啡街</div>
+        <div class="nc-desc">13 DE MARZO熊熊咖啡館、Wiggle Wiggle潮流小物，武康路步行即到，是上海最密集的網紅咖啡區。</div>
+        <span class="nc-tag nc-free">逛街免費</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u9678\u5bb6\u5634\u6efe\u6c5f\u5927\u9053+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🚶</span></div>
-        <div class="nc-name">陸家嘴濱江大道</div>
-        <div class="nc-desc">免費步行賞外灘，從浦東角度看萬國建築，與外灘視角完全不同。</div>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=1933%E8%80%81%E5%A0%B4%E5%9D%8A+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🏭</span></div>
+        <div class="nc-name">1933老場坊</div>
+        <div class="nc-desc">1930年代舊屠宰場改建的工業風藝文空間，夜晚燈光打在混凝土牆上，拍照極有氛圍感。</div>
+        <span class="nc-tag nc-free">免費</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%99%B8%E5%AE%B6%E5%98%B4%E6%BF%B1%E6%B1%9F%E5%A4%A7%E9%81%93+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">🔭</span></div>
+        <div class="nc-name">陸家嘴濱江大道（替代登高）</div>
+        <div class="nc-desc">若上海中心排隊太長，免費沿濱江步道走，回望外灘是完全不同的角度，傍晚看日落最美。</div>
         <span class="nc-tag nc-free">免費</span>
       </a>
     </div>
   </div>
 </div>
 
-<!-- ════ DAY 5 ════ -->
+<!-- ══ DAY 5 ══ -->
 <div class="day-panel" id="day4">
   <div class="day-header">
     <div class="day-number">05</div>
@@ -656,7 +667,7 @@ footer strong{color:var(--gold);}
   <div class="timeline">
     <div class="event"><div class="event-dot dot-gold"></div>
       <div class="event-card type-food">
-        <div class="event-meta"><span class="event-icon">🥟</span><span class="event-type-label label-food">早餐</span><span class="event-time">09:00–10:00</span></div>
+        <div class="event-meta"><span class="event-icon">🥟</span><span class="event-type-label label-food">早餐</span><span class="event-time">09:00</span></div>
         <h3 class="event-title">小楊生煎（靜安寺店）最後一頓</h3>
         <p class="event-desc">用生煎和靜安寺道別。步行到越洋廣場B2，再點一籠鮮肉生煎，喝一碗辣湯，上海五天圓滿收尾。</p>
         <div class="badges"><span class="badge badge-price">人均 ¥20–30</span></div>
@@ -666,7 +677,7 @@ footer strong{color:var(--gold);}
       <div class="event-card type-sight">
         <div class="event-meta"><span class="event-icon">🛍️</span><span class="event-type-label label-sight">採買</span><span class="event-time">10:00–13:00</span></div>
         <h3 class="event-title">靜安寺周邊採買伴手禮</h3>
-        <p class="event-desc">住靜安寺的最大優勢：久光百貨、梅龍鎮廣場就在旁邊，蝴蝶酥、梨膏糖、雪花膏一次買齊，比繞去城隍廟省一小時。</p>
+        <p class="event-desc">住靜安寺最大優勢：久光百貨、梅龍鎮廣場就在旁邊，蝴蝶酥、梨膏糖、雪花膏一次買齊，比繞去城隍廟省一小時。</p>
         <div class="badges"><span class="badge badge-tip">💡 蝴蝶酥保存期限短，注意出境規定</span></div>
       </div>
     </div>
@@ -674,7 +685,7 @@ footer strong{color:var(--gold);}
       <div class="event-card type-food">
         <div class="event-meta"><span class="event-icon">🍗</span><span class="event-type-label label-food">午餐</span><span class="event-time">13:00–14:30</span></div>
         <h3 class="event-title">雲南南路美食街</h3>
-        <p class="event-desc">老牌上海人美食記憶：小紹興白斬雞、五芳齋粽子。從靜安寺地鐵約10分鐘，是道地上海味的最後一課。</p>
+        <p class="event-desc">老牌上海人美食記憶：小紹興白斬雞、五芳齋粽子，道地上海味的最後一課。從靜安寺地鐵約10分鐘。</p>
         <div class="badges"><span class="badge badge-price">人均 ¥30–60</span></div>
       </div>
     </div>
@@ -682,8 +693,8 @@ footer strong{color:var(--gold);}
       <div class="event-card type-transport">
         <div class="event-meta"><span class="event-icon">✈️</span><span class="event-type-label label-transport">交通</span><span class="event-time">15:00 最遲出發</span></div>
         <h3 class="event-title">前往浦東機場</h3>
-        <p class="event-desc">靜安寺→地鐵2號線→浦東機場，約55分鐘（¥7）。班機19:50，建議17:00前到機場，六月週六出境人多！</p>
-        <div class="badges"><span class="badge badge-price">地鐵 ¥7</span><span class="badge badge-tip">💡 17:00前到機場</span><span class="badge badge-info">19:50→21:50 抵桃園</span></div>
+        <p class="event-desc">靜安寺→地鐵2號線→浦東機場，約55分鐘（¥7）。班機19:50，建議17:00前到機場。六月週六出境人多，千萬不要低估排隊時間！</p>
+        <div class="badges"><span class="badge badge-price">地鐵 ¥7</span><span class="badge badge-tip">💡 17:00前到機場</span><span class="badge badge-info">19:50 → 21:50 抵桃園</span></div>
       </div>
     </div>
   </div>
@@ -699,42 +710,41 @@ footer strong{color:var(--gold);}
   <!-- MAP DAY5 -->
   <div class="map-wrap" style="margin-top:2rem">
     <div class="map-bar">
-      <span>📍</span>
-      <span class="map-bar-title">靜安寺民宿 → 浦東機場 路線</span>
-      <a class="map-bar-link" href="https://maps.google.com/maps/dir/\u9759\u5b89\u5bfa\u7ad9+\u4e0a\u6d77/\u6d66\u6771\u570b\u969b\u6a5f\u5834" target="_blank" rel="noopener">Google Maps 路線 ↗</a>
+      <span>📍</span><span class="map-bar-title">靜安寺 → 浦東機場 路線總覽</span>
+      <a class="map-bar-link" href="https://www.google.com/maps/dir/?api=1&origin=31.2235,121.4453&destination=31.1443,121.8083&travelmode=transit" target="_blank" rel="noopener">Google Maps 路線 ↗</a>
     </div>
     <div class="map-frames">
-      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.430%2C31.130%2C121.820%2C31.240&layer=mapnik&marker=31.2235%2C121.4453" loading="lazy"></iframe>
+      <iframe class="active" src="https://www.openstreetmap.org/export/embed.html?bbox=121.420%2C31.120%2C121.840%2C31.250&layer=mapnik&marker=31.2235%2C121.4453" loading="lazy" title="靜安寺至浦東機場"></iframe>
     </div>
   </div>
 
   <!-- NEARBY DAY5 -->
   <div class="nearby-section">
-    <p class="nearby-title">✦ 6/28 離境前還能去的地方（靜安寺附近）</p>
+    <p class="nearby-title">✦ 6/28 離境前靜安寺附近還能去的地方</p>
     <div class="nearby-grid">
-      <a class="nearby-card" href="https://maps.app.goo.gl/jingan-temple" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%9C%E5%AE%89%E5%AF%BA&query_place_id=ChIJVV1KHv5vsjURQgiHHZfGW3o" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🏛️</span><span class="nc-rating">⭐ 4.5</span></div>
         <div class="nc-name">靜安寺（晨間參拜）</div>
-        <div class="nc-desc">7:30開門，早上人少最清靜，若還沒進去參觀，離境前最後機會。</div>
+        <div class="nc-desc">7:30開門，早上人最少最清靜，若還沒進去參觀，離境前最後機會。</div>
         <span class="nc-tag">票 ¥50</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u6885\u9f8d\u93ae\u5ee3\u5834+\u9759\u5b89+\u4e0a\u6d77" target="_blank" rel="noopener">
-        <div class="nc-top"><span class="nc-icon">🛍️</span></div>
-        <div class="nc-name">梅龍鎮廣場</div>
-        <div class="nc-desc">步行即到，地下樓層有上海本地特色食品店，買蝴蝶酥、糕點最方便。</div>
-        <span class="nc-tag">10:00起開</span>
-      </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u4e45\u5149\u767e\u8ca8+\u4e0a\u6d77" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%85%E5%85%89%E7%99%BE%E8%B2%A8+%E9%9D%9C%E5%AE%89+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🏬</span></div>
         <div class="nc-name">久光百貨</div>
-        <div class="nc-desc">日系百貨，B1–B2食品區有上海特色伴手禮，品質有保障，價格透明。</div>
+        <div class="nc-desc">日系百貨，B1–B2食品區有蝴蝶酥、糕點等上海特色伴手禮，品質有保障，步行即到。</div>
         <span class="nc-tag">10:00起開</span>
       </a>
-      <a class="nearby-card" href="https://maps.google.com/?q=\u4e0a\u6d77\u81ea\u7136\u535a\u7269\u9928+\u9759\u5b89\u96d5\u5851\u516c\u56ed" target="_blank" rel="noopener">
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E6%B5%B7%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A4%A8+%E9%9D%9C%E5%AE%89&query_place_id=ChIJsbws7BVwsjURHcQOJedzqAA" target="_blank" rel="noopener">
         <div class="nc-top"><span class="nc-icon">🦕</span><span class="nc-rating">⭐ 4.5</span></div>
         <div class="nc-name">上海自然博物館</div>
-        <div class="nc-desc">靜安雕塑公園內，館藏豐富，帶小孩的話是離境前消磨時間的好地方。</div>
+        <div class="nc-desc">靜安雕塑公園內，恐龍化石＋生命長河館藏豐富，帶小孩的好去處，B2有化石挖掘體驗。</div>
         <span class="nc-tag">¥30</span>
+      </a>
+      <a class="nearby-card" href="https://www.google.com/maps/search/?api=1&query=%E9%9A%B1%E7%A7%98%E6%B8%AF%E5%A7%BF%E6%85%8B+%E9%9D%9C%E5%AE%89%E5%AF%BA+%E4%B8%8A%E6%B5%B7" target="_blank" rel="noopener">
+        <div class="nc-top"><span class="nc-icon">📸</span></div>
+        <div class="nc-name">靜安寺周邊街拍</div>
+        <div class="nc-desc">南京西路上的愚園路起點，老弄堂＋咖啡館，是外國旅客較少的在地街拍好去處。</div>
+        <span class="nc-tag nc-free">免費</span>
       </a>
     </div>
   </div>
@@ -744,7 +754,7 @@ footer strong{color:var(--gold);}
 
 <footer>
   <p>上海 · 2025年6月 ✦ <strong>Shanghai 五日深度行程</strong></p>
-  <p style="margin-top:6px;font-size:.65rem;">住宿：Tonight Homestay 靜安寺 · 地圖由 OpenStreetMap 提供 · 資訊僅供參考，實際票價請以官方為準</p>
+  <p style="margin-top:6px;font-size:.65rem;">住宿：Tonight Homestay 靜安寺 · 地圖由 OpenStreetMap 提供 · 景點連結使用 Google Maps 官方 API URL 格式 · 資訊僅供參考</p>
 </footer>
 
 <script>
@@ -753,22 +763,16 @@ function showDay(idx){
   document.querySelectorAll('.day-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
   document.querySelector('.nav-sticky').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-function swMap(framesId, tabsId, idx){
+function swMap(framesId,tabsId,idx){
   document.getElementById(framesId).querySelectorAll('iframe').forEach((f,i)=>f.classList.toggle('active',i===idx));
   document.getElementById(tabsId).querySelectorAll('.map-tab-btn').forEach((t,i)=>t.classList.toggle('active',i===idx));
 }
-
-// Fade-in on scroll
 const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';io.unobserve(e.target);}
-  });
-},{threshold:0.08});
-document.querySelectorAll('.event-card,.map-wrap,.nearby-card,.hotel-card,.budget-card').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(14px)';
-  el.style.transition=`opacity .45s ease ${(i%6)*.06}s,transform .45s ease ${(i%6)*.06}s`;
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';io.unobserve(e.target);}});
+},{threshold:0.06});
+document.querySelectorAll('.event-card,.map-wrap,.nearby-card,.hotel-card,.budget-card,.scene-box').forEach((el,i)=>{
+  el.style.opacity='0';el.style.transform='translateY(12px)';
+  el.style.transition=`opacity .4s ease ${(i%7)*.05}s,transform .4s ease ${(i%7)*.05}s`;
   io.observe(el);
 });
 </script>
